@@ -1,0 +1,8 @@
+This favicon was generated using the following font:
+
+- Font Title: Changa (Extra Light, 110)
+- Font Author: Copyright 2018 The Changa Project Authors (https://github.com/eliheuer/changa-vf)
+- Font Source: http://fonts.gstatic.com/s/changa/v17/2-c79JNi2YuVOUcOarRPgnNGooxCZy2xQjDp9htf1ZM.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
+
+https://favicon.io/favicon-generator/
