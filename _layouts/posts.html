@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<h4>Posts</h4>
+<ul style="list-style: none;">
+
+{% for post in site.posts %}
+
+    <li>
+      <a style="text-decoration: underline; color:#222" href="{{ post.url }}">{{ post.title }} - {{ post.date | date_to_long_string }}</a>
+  </li>
+
+{% endfor %}
+</ul>

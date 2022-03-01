@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="four columns sidebar" style="margin-top: 15%">
+        <nav>
+        <h4 id="logo">{{ site.title }}</h4>
+        <ul>
+          <li>
+            <a href="/">Index</a>
+          </li>
+          <li>
+            <a href="/posts">Posts</a>
+          </li>
+          <li>
+            <a href="/contact-me">Contact Me</a>
+          </li>
+          <li>
+            <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+      </div>
+
+      <div class="eight columns content" style="margin-top: 15%">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>
