@@ -5,11 +5,15 @@ date: 2022-03-01 09:00:00 +1100
 tags: solar
 ---
 
+Posted 10 February, 2022.
+
+<img src="assets/images/solar-panels.jpeg" alt="Pipes" width="600"/>
+
 As a lucky home owner in Sydney, I have been fortunate enough to be able to install solar panels and ducted air
 conditioning in my house. We have had solar panels going on 3 years now so I thought I would share some insights into
 how we use our solar power in 2022.
 
-**The panels themselves**
+##### The panels themselves
 
 We have a 5.4kW system that comprises of 18 300W [Canadian Solar][2] panels and a 5.1kW [SolarEdge][3] inverter. Each panel has a
 [Power Optimiser][6] which means that they can be individually monitored and can tolerate shading without dropping the
@@ -32,7 +36,9 @@ the time arises.
 
 <img src="assets/images/panel-energy.png" alt="Panel Monitoring" width="400"/>
 
-**Solar inverter**
+**Above: Datadog is a great tool to create dashboard's for your home automation needs. With this graph I can easily spot a panel performing abnormally.**
+
+##### Solar inverter
 
 Working with the [SolarEdge SE5000H][4] single phase inverter has been an absolute pleasure and I would buy one again
 without hesitation. Being a data nerd, one of the things the inverter needed to have was an API. I wanted to be able to
@@ -50,7 +56,7 @@ In my scripts I had to factor this in. Not a big deal, and I understand why the 
 As for inverter performance, it's been flawless and I've spent next to no-time having to troubleshoot it or connect it
 back up to WiFi etc. It just chugs along day-in day-out.
 
-**How we use our solar power**
+##### How we use our solar power
 
 One of the trends we have noticed over the years is the reduction in solar feed-in tariffs. Very early on, as solar
 started to kick off in Australia, feed-in tariffs were sky high and it made a lot of sense to feed-back into the grid
@@ -88,7 +94,9 @@ to purchase about 20kW. The afternoons are when we tend to purchase the most as 
 
 <img src="assets/images/solar-production.jpg" alt="Solar Production Curve" width="400"/>
 
-You can see from the above image the afternoon purchasing tail (red shading). The 5kW surge at middnight is our 5kW
+**Above: You can see the afternoon "purchasing tail" (red shading).**
+
+The 5kW surge at middnight is our 5kW
 hot water system kicking in. The surges during the day are from the ducted A/C kicking in and cooling the house. So you
 can see the SolarEdge app is very handy for discovering how you use your energy.
 
