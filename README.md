@@ -10,3 +10,7 @@ Run `make setup` to install the jekyll gem.
 ### Running the site
 
 Run `make run` to have jekyll run the site.
+
+### Getting stock images
+
+Images are usually obtained for free from https://unsplash.com/
