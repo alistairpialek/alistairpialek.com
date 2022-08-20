@@ -1,11 +1,9 @@
 ---
 layout: post
 title: "Solahart Atmos Frost Timer Function"
-date: 2022-08-19 09:00:00 +1100
+date: 2022-08-20 09:00:00 +1000
 tags: hot-water
 ---
-
-Posted 19 August, 2022.
 
 <img src="assets/images/pipes.jpeg" alt="Pipes" width="600"/>
 

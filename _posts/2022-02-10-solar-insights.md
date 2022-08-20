@@ -1,11 +1,9 @@
 ---
 layout: post
 title: "Insights into boosting your solar power self-consumption"
-date: 2022-03-01 09:00:00 +1100
+date: 2022-03-01 09:00:00 +1000
 tags: solar
 ---
-
-Posted 10 February, 2022.
 
 <img src="assets/images/solar-panels.jpeg" alt="Pipes" width="600"/>
 
