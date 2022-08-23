@@ -5,7 +5,7 @@ date: 2022-08-20 09:00:00 +1000
 tags: hot-water
 ---
 
-<img src="assets/images/pipes.jpeg" alt="Pipes" width="600"/>
+<img src="assets/images/pipes.jpeg" alt="Pipes" width="100%"/>
 
 Recently we made the switch to the [Solahart Atmos Frost][1] heat pump and we've been very impressed with how its performed so far.
 We did however have some trouble getting the timer function to work with our off peak tariff. Here's how we solved it.

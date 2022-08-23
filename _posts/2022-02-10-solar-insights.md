@@ -5,7 +5,7 @@ date: 2022-03-01 09:00:00 +1000
 tags: solar
 ---
 
-<img src="assets/images/solar-panels.jpeg" alt="Pipes" width="600"/>
+<img src="assets/images/solar-panels.jpeg" alt="Pipes" width="100%"/>
 
 As a lucky home owner in Sydney, I have been fortunate enough to be able to install solar panels and ducted air
 conditioning in my house. We have had solar panels going on 3 years now so I thought I would share some insights into
