@@ -2,13 +2,16 @@
  * Navigation bar.
  */
 
+
 nav ul {
   float: left;
 }
+
 nav ul li {
   display: block;
   margin-bottom: 10px;
 }
+
 nav ul li a,
 nav ul li a:visited,
 nav ul li a:active {
@@ -17,6 +20,7 @@ nav ul li a:active {
   text-decoration: none;
   font-weight: bold;
 }
+
 nav ul li a:hover,
 nav ul li a:focus {
   color: #222;
@@ -37,6 +41,7 @@ table.sourceCode pre {
   vertical-align: baseline;
   border: none;
 }
+
 td.lineNumbers {
   border-right: 1px solid #aaaaaa;
   text-align: right;
@@ -44,47 +49,60 @@ td.lineNumbers {
   padding-right: 5px;
   padding-left: 5px;
 }
+
 td.sourceCode {
   padding-left: 5px;
 }
+
 pre.sourceCode span.kw {
   color: #007020;
   font-weight: bold;
 }
+
 pre.sourceCode span.dt {
   color: #902000;
 }
+
 pre.sourceCode span.dv {
   color: #40a070;
 }
+
 pre.sourceCode span.bn {
   color: #40a070;
 }
+
 pre.sourceCode span.fl {
   color: #40a070;
 }
+
 pre.sourceCode span.ch {
   color: #4070a0;
 }
+
 pre.sourceCode span.st {
   color: #4070a0;
 }
+
 pre.sourceCode span.co {
   color: #60a0b0;
   font-style: italic;
 }
+
 pre.sourceCode span.ot {
   color: #007020;
 }
+
 pre.sourceCode span.al {
   color: red;
   font-weight: bold;
 }
+
 pre.sourceCode span.fu {
   color: #06287e;
 }
-pre.sourceCode span.re {
-}
+
+pre.sourceCode span.re {}
+
 pre.sourceCode span.er {
   color: red;
   font-weight: bold;
