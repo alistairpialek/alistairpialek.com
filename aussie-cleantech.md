@@ -4,9 +4,10 @@ layout: page
 
 #### Aussie cleantech startups to watch
 
-Cleantech startups in Australia are rapidily evolving and maturing and it's an exciting space to keep apart of.
+Cleantech startups in Australia are rapidily maturing and it's an exciting space to keep track of.
 Unfortunately, discovering these companies is often a bit tricky, so here's a list of some of the companies I am most
-excited about (in no particular order) grouped by the area of cleantech they are focusing on.
+excited about (in no particular order) grouped by the area of cleantech they are focusing on. For anyone looking to
+work for a cleantech startup in Australia, check out this [page][6]. Job vacancies are listed [here][7].
 
 ##### Emissions Offset
 
@@ -39,7 +40,19 @@ Helps businesses design and quote clean energy products for customers. For solar
 to help quote on time and labor. For batteries, generation and consumption modelling allows precise Time of Use and VPP
 savings calculations.
 
+##### Financing
+
+[Brighte][5]
+
+Perhaps the biggest issue with clean energy products is their upfront cost. Whilst it's a nice idea to go green,
+affording it can be a challenge. Brighte attempts to solve the first and second barriers of clean energy ownership
+by providing green loans with 0% interest to help you finance your clean energy purchase and finding qualified tradies
+to help you install it.
+
 [1]: https://www.our-trace.com/
 [2]: https://www.repositpower.com/
 [3]: https://www.amber.com.au/
 [4]: https://upowr.co/
+[5]: https://brighte.com.au/
+[6]: https://www.climatesalad.com/climate-tech-companies-in-australia
+[7]: https://www.climatesalad.com/jobs-in-climate-tech-australia
