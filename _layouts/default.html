@@ -1,58 +1,58 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang }}">
 
-  {%- include head.html -%}
+{%- include head.html -%}
 
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLWTZ3Z"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLWTZ3Z" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    {%- include header.html -%}
+  {%- include header.html -%}
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-      <div class="four columns sidebar" style="margin-top: 15%">
+      <div class="three columns sidebar" style="margin-top: 10%">
         <nav>
-        <h4 id="logo">{{ site.title }}</h4>
-        <ul>
-          <li>
-            <a href="/">Index</a>
-          </li>
-          <li>
-            <a href="/posts">Posts</a>
-          </li>
-          <li>
-            <a href="https://github.com/{{ site.github_username }}">GitHub</a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a>
-          </li>
-          <hr>
-          <li>
-            <a href="/aussie-cleantech">Aussie Cleantech</a>
-          </li>
-        </ul>
-      </nav>
+          <h4 id="logo">{{ site.title }}</h4>
+          <ul>
+            <li>
+              <a href="/">Index</a>
+            </li>
+            <li>
+              <a href="/posts">Posts</a>
+            </li>
+            <li>
+              <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a>
+            </li>
+            <hr>
+            <li>
+              <a href="/aussie-cleantech">Aussie Cleantech</a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
-      <div class="eight columns content" style="margin-top: 15%">
+      <div class="nine columns content" style="margin-top: 10%">
         {{ content }}
       </div>
     </div>
   </div>
 
-<!-- End Document
+  <!-- End Document
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-    {%- include footer.html -%}
+  {%- include footer.html -%}
 
-  </body>
+</body>
 
 </html>
