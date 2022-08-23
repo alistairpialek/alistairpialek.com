@@ -1,8 +1,8 @@
 ---
 layout: page
+title: "Aussie cleantech startups to watch"
+date: 2022-08-23 09:00:00 +1000
 ---
-
-#### Aussie cleantech startups to watch
 
 Cleantech startups in Australia are rapidily maturing and it's an exciting space to keep track of.
 Unfortunately, discovering these companies is often a bit tricky, so here's a list of some of the companies I am most
