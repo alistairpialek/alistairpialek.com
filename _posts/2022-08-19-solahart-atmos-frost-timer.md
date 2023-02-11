@@ -10,7 +10,7 @@ tags: hot-water
 Recently we made the switch to the [Solahart Atmos Frost][1] heat pump and we've been very impressed with how its performed so far.
 We did however have some trouble getting the timer function to work with our off peak tariff. Here's how we solved it.
 
-##### The problem and why we wanted to use a timer
+# The problem and why we wanted to use a timer
 
 Controlled load 1 runs for us from 12:30am to 7:00am during the week. During the weekend it runs from 12:30am to 5:00pm.
 During the week, water is heated for a few hours starting from when power is turned on at 12:30am. During the weekend the
@@ -23,7 +23,7 @@ coming out of the tap is barely tolerable for showers.
 My attempts to set a timer (timer 1) on the unit to make sure it would only run from 12:30am to 7:00am were unsuccessful.
 Even though the time was set, the unit would still turn on at 3:00pm!
 
-##### The fix
+# The fix
 
 The [manual][2] firstly makes it very unclear whether the timer is a blockout timer or not. Most hot water systems work using
 a blockout timer, so this was my assumption. When setting the timer as a blockout timer failed to work, I proceeded to set the

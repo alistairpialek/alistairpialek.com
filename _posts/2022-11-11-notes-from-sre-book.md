@@ -15,7 +15,7 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * _The Site Reliability Workbook_ and
 * _Seeking SRE_
 
-#### Introduction
+# Introduction
 
 * We (SRE) are distinct from the industry term DevOps, because although we definitely regard infrastructure as code, we have reliability as our main focus. Additionally, we are strongly oriented toward removing the necessity for operations.
 * They (development/ops) have different assumptions about the target level of product stability.
@@ -27,7 +27,7 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * In general, an SRE team is responsible for the availability, latency, performance, efficiency, change management, monitoring, emergency response, and capacity planning of their service(s).
 * In practice, this is accomplished by monitoring the amount of operational work being done by SREs, and redirecting excess operational work to the product development teams: reassigning bugs and tickets to development managers, [re]integrating developers into on-call pager rotations, and so on. The redirection ends when the operational load drops back to 50% or lower. This also provides an effective feedback mechanism, guiding developers to build systems that don’t need manual intervention. This approach works well when the entire organization—SRE and development alike—understands why the safety valve mechanism exists, and supports the goal of having no overflow events because the product doesn’t generate enough operational load to require it.
 
-#### Error Budget
+# Error Budget
 
 * The structural conflict is between pace of innovation and product stability, and as described earlier, this conflict often is expressed indirectly. In SRE we bring this conflict to the fore, and then resolve it with the introduction of an error budget.
 * The error budget stems from the observation that 100% is the wrong reliability target for basically everything.
@@ -38,31 +38,31 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * A service that’s 99.99% available is 0.01% unavailable. That permitted 0.01% unavailability is the service’s error budget. We can spend the budget on anything we want, as long as we don’t overspend it.
 * The use of an error budget resolves the structural conflict of incentives between development and SRE. SRE’s goal is no longer "zero outages"; rather, SREs and product developers aim to spend the error budget getting maximum feature velocity. This change makes all the difference. An outage is no longer a "bad" thing—it is an expected part of the process of innovation, and an occurrence that both development and SRE teams manage rather than fear.
 
-#### Change Management
+# Change Management
 
 * Reliability is a function of mean time to failure (MTTF) and mean time to repair (MTTR).
 * When humans are necessary, we have found that thinking through and recording the best practices ahead of time in a "playbook" produces roughly a 3x improvement in MTTR as compared to the strategy of "winging it."
 * SRE has found that roughly 70% of outages are due to changes in a live system. Best practices in this domain use automation to accomplish the following: • Implementing progressive rollouts • Quickly and accurately detecting problems • Rolling back changes safely when problems arise
 
-#### Capacity Planning
+# Capacity Planning
 
 * Capacity planning should take both organic growth (which stems from natural product adoption and usage by customers) and inorganic growth (which results from events like feature launches, marketing campaigns, or other business-driven changes) into account.
 
-#### Efficiency and Performance
+# Efficiency and Performance
 
 * Resource use is a function of demand (load), capacity, and software efficiency. SREs predict demand, provision capacity, and can modify the software. These three factors are a large part (though not the entirety) of a service’s efficiency.
 * SREs provision to meet a capacity target at a specific response speed, and thus are keenly interested in a service’s performance.
 * SREs and product developers will (and should) monitor and modify a service to improve its performance, thus adding capacity and improving efficiency.
 * If a task tries to use more resources than it requested, Borg kills the task and restarts it (as a slowly crashlooping task is usually preferable to a task that hasn’t been restarted at all).
 
-#### Risk
+# Risk
 
 * Eliminating toil is one of SRE’s most important tasks, and is the subject of Eliminating Toil. We define toil as mundane, repetitive operational work providing no enduring value, which scales linearly with service growth.
 * Extreme reliability comes at a cost: maximizing stability limits how fast new features can be developed and how quickly products can be delivered to users, and dramatically increases their cost, which in turn reduces the numbers of features a team can afford to offer.
 * Site Reliability Engineering seeks to balance the risk of unavailability with the goals of rapid innovation and efficient service operations, so that users’ overall happiness—with features, service, and performance—is optimized.
 * That is, when we set an availability target of 99.99%,we want to exceed it, but not by much: that would waste opportunities to add features to the system, clean up technical debt, or reduce its operational costs. In a sense, we view the availability target as both a minimum and a maximum. The key advantage of this framing is that it unlocks explicit, thoughtful risk taking.
 
-#### Measuring Service Risk
+# Measuring Service Risk
 
 * At Google, however, a time-based metric for availability is usually not meaningful because we are looking across globally distributed services. Our approach to fault isolation makes it very likely that we are serving at least a subset of traffic for a given service somewhere in the world at any given time (i.e., we are at least partially "up" at all times).
 * Therefore, instead of using metrics around uptime, we define availability in terms of the request success rate. Aggregate availability shows how this yield-based metric is calculated over a rolling window (i.e., proportion of successful requests over a one-day window).
@@ -76,13 +76,13 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * Does this additional revenue offset the cost of reaching that level of reliability?
 * While there are significant differences between ISPs and protocols (e.g., TCP versus UDP, IPv4 versus IPv6), we’ve measured the typical background error rate for ISPs as falling between 0.01% and 1%.
 
-#### Identifying the Risk Tolerance of Infrastructure Services
+# Identifying the Risk Tolerance of Infrastructure Services
 
 * One way to satisfy these competing constraints in a cost-effective manner is to partition the infrastructure and offer it at multiple independent levels of service. In the Bigtable example, we can build two types of clusters: low-latency clusters and throughput clusters.
 * With explicitly delineated levels of service, the infrastructure providers can effectively externalize the difference in the cost it takes to provide service at a given level to clients. Exposing cost in this way motivates the clients to choose the level of service with the lowest cost that still meets their needs.
 * We can provide vastly different service guarantees by adjusting a variety of service characteristics, such as the quantities of resources, the degree of redundancy, the geographical provisioning constraints, and, critically, the infrastructure software configuration.
 
-#### Motivation for Error Budgets
+# Motivation for Error Budgets
 
 * Product development performance is largely evaluated on product velocity, which creates an incentive to push new code as quickly as possible.
 * Every push is risky. How much should we work on reducing that risk, versus doing other work?
@@ -97,7 +97,7 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * Managing service reliability is largely about managing risk, and managing risk can be costly.
 * An error budget aligns incentives and emphasizes joint ownership between SRE and product development. Error budgets make it easier to decide the rate of releases and to effectively defuse discussions about outages with stakeholders, and allows multiple teams to reach the same conclusion about production risk without rancor.
 
-#### SLI, SLO, SLA
+# SLI, SLO, SLA
 
 * An SLI is a service level indicator—a carefully defined quantitative measure of some aspect of the level of service that is provided.
 * Request Latency, Error rate, Saturation, system Throughput (LEST).
@@ -111,7 +111,7 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * SRE doesn’t typically get involved in constructing SLAs, because SLAs are closely tied to business and product decisions. SRE does, however, get involved in helping to avoid triggering the consequences of missed SLOs. They can also help to define the SLIs: there obviously needs to be an objective way to measure the SLOs in the agreement, or disagreements will arise.
 * You shouldn’t use every metric you can track in your monitoring system as an SLI; an understanding of what your users want from the system will inform the judicious selection of a few indicators.
 
-#### Indicators in Practice
+# Indicators in Practice
 
 * User-facing serving systems, such as the Shakespeare search frontends, generally care about availability, latency, and throughput. In other words: Could we respond to the request? How long did it take to respond?
 * Storage systems often emphasize latency, availability, and durability. In other words: How long does it take to read or write data? Can we access the data on demand? Is the data still there when we need it?
@@ -126,11 +126,11 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * Keep a safety margin Using a tighter internal SLO than the SLO advertised to users gives you room to respond to chronic problems before they become visible externally. An SLO buffer also makes it possible to accommodate re-implementations that trade performance for other attributes, such as cost or ease of maintenance, without having to disappoint users.
 * Understanding how well a system is meeting its expectations helps decide whether to invest in making the system faster, more available, and more resilient. Alternatively, if the service is doing fine, perhaps staff time should be spent on other priorities, such as paying off technical debt, adding new features, or introducing other products.
 
-#### Eliminating Toil
+# Eliminating Toil
 
 * Consistent with this data, SREs report that their top source of toil is interrupts (that is, non-urgent service-related messages and emails). The next leading source is on-call (urgent) response, followed by releases and pushes.
 
-#### The Four Golden Signals
+# The Four Golden Signals
 
 * Building dashboards Dashboards should answer basic questions about your service, and normally include some form of the four golden signals (discussed in The Four Golden Signals).
 * The four golden signals of monitoring are latency, traffic, errors, and saturation. If you can only measure four metrics of your user-facing system, focus on these four.
@@ -140,7 +140,7 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * Saturation How "full" your service is. A measure of your system fraction, emphasizing the resources that are most constrained (e.g., in a memory-constrained system, show memory; in an I/O-constrained system, show I/O). Note that many systems degrade in performance before they achieve 100% utilization, so having a utilization target is essential.
 * Latency increases are often a leading indicator of saturation. Measuring your 99th percentile response time over some small window (e.g., one minute) can give a very early signal of saturation. Finally, saturation is also concerned with predictions of impending saturation, such as "It looks like your database will fill its hard drive in 4 hours."
 
-#### Creating Alerts and Pages
+# Creating Alerts and Pages
 
 * Does this rule detect an otherwise undetected condition that is urgent, actionable, and actively or imminently user-visible?
 * Will I ever be able to ignore this alert, knowing it’s benign? When and why will I be able to ignore this alert, and how can I avoid this scenario?
@@ -151,32 +151,32 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * It’s important that decisions about monitoring be made with long-term goals in mind. Every page that happens today distracts a human from improving the system for tomorrow, so there is often a case for taking a short-term hit to availability or performance in order to improve the long-term outlook for the system.
 * It’s important not to think of every page as an event in isolation, but to consider whether the overall level of paging leads toward a healthy, appropriately available system with a healthy, viable team and long-term outlook. We review statistics about page frequency (usually expressed as incidents per shift, where an incident might be composed of a few related pages) in quarterly reports with management, ensuring that decision makers are kept up to date on the pager load and overall health of their teams.
 
-#### Automation
+# Automation
 
 * We graduated from optimizing our infrastructure for a lack of failover to embracing the idea that failure is inevitable, and therefore optimizing to recover quickly through automation.
 * Automation processes can vary in three respects: • Competence, i.e., their accuracy • Latency, how quickly all steps are executed when initiated • Relevance, or proportion of real-world process
 * Reliability is the fundamental feature, and autonomous, resilient behavior is one useful way to get that.
 
-#### Release Engineering
+# Release Engineering
 
 * Changes to any aspect of the release process should be intentional, rather than accidental.
 * Making sure that our tools behave correctly by default and are adequately documented makes it easy for teams to stay focused on features and users, rather than spending time reinventing the wheel (poorly) when it comes to releasing software.
 
-#### Self-Service Model
+# Self-Service Model
 
 * In order to work at scale, teams must be self-sufficient.
 * Some teams perform hourly builds and then select the version to actually deploy to production from the resulting pool of builds. Selection is based upon the test results and the features contained in a given build.
 * Other teams have adopted a "Push on Green" release model and deploy every build that passes all tests.
 * Hermetic Builds: The build process is self-contained and must not rely on services that are external to the build environment.
 
-#### Branching
+# Branching
 
 * All code is checked into the main branch of the source code tree (mainline). However, most major projects don’t release directly from the mainline. Instead, we branch from the mainline
 * At a specific revision and never merge changes from the branch back into the mainline. Bug fixes are submitted to the mainline and then cherry picked into the branch for inclusion in the release. This practice avoids inadvertently picking up unrelated changes submitted to the mainline since the original build occurred. Using this branch and cherry pick method, we know the exact contents of each release.
 * Release engineering recommends that the continuous build test targets correspond to the same test targets that gate the project release.
 * During the release process, we re-run the unit tests using the release branch and create an audit trail showing that all the tests passed. This step is important because if a release involves cherry picks, the release branch may contain a version of the code that doesn’t exist anywhere on the mainline. We want to guarantee that the tests pass in the context of what’s actually being released.
 
-#### Simplicity
+# Simplicity
 
 * SREs work to create procedures, practices, and tools that render software more reliable.
 * At the same time, SREs ensure that this work has as little impact on developer agility as possible.
@@ -184,18 +184,18 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * Constantly strive to eliminate complexity in systems they onboard and for which they assume operational responsibility
 * SRE promotes practices that make it more likely that all code has an essential purpose, such as scrutinizing code to make sure that it actually drives business goals, routinely removing dead code, and building bloat detection into all levels of testing.
 
-#### Practices
+# Practices
 
 * Put simply, SREs run services—a set of related systems, operated for users, who may be internal or external—and are ultimately responsible for the health of these services. Successfully operating a service entails a wide range of activities: developing monitoring systems, planning capacity, responding to incidents, ensuring the root causes of outages are
 * Without monitoring, you have no way to tell whether the service is even working; absent a thoughtfully designed monitoring infrastructure, you’re flying blind. Maybe everyone who tries to use the website gets an error, maybe not—but you want to be aware of problems before your users notice them.
 * During an incident, it’s often tempting to give in to adrenalin and start responding ad hoc. We advise against this temptation in Emergency Response, and counsel in Managing Incidents, that managing incidents effectively should reduce their impact and limit outage-induced anxiety.
 * An ounce of prevention is worth a pound of cure.
 
-#### Blackbox Monitoring
+# Blackbox Monitoring
 
 * However, white-box monitoring does not provide a full picture of the system being monitored; relying solely upon white-box monitoring means that you aren’t aware of what the users see. You only see the queries that arrive at the target; the queries that never make it due to a DNS error are invisible, while queries lost due to a server crash never make a sound. You can only alert on the failures that you expected.
 
-#### Being On-Call
+# Being On-Call
 
 * We strongly believe that the "E" in "SRE" is a defining characteristic of our organization, so we strive to invest at least 50% of SRE time into engineering: of the remainder, no more than 25% can be spent on-call, leaving up to another 25% on other types of operational, non-project work.
 * It’s important that on-call SREs understand that they can rely on several resources that make the experience of being on-call less daunting than it may seem. The most important on-call resources are: • Clear escalation paths • Well-defined incident-management procedures • A blameless postmortem culture.
@@ -203,17 +203,17 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * Finally, when an incident occurs, it’s important to evaluate what went wrong, recognize what went well, and take action to prevent the same errors from recurring in the future.
 * Recognizing automation opportunities is one of the best ways to prevent human errors.
 
-#### Operational Overload
+# Operational Overload
 
 * Misconfigured monitoring is a common cause of operational overload. Paging alerts should be aligned with the symptoms that threaten a service’s SLOs. All paging alerts should also be actionable. Low-priority alerts that bother the on-call engineer every hour (or more frequently) disrupt productivity, and the fatigue such alerts induce can also cause serious alerts to be treated with less attention than necessary.
 * Noisy alerts that systematically generate more than one alert per incident should be tweaked to approach a 1:1 alert/incident ratio. Doing so allows the on-call engineer to focus on the incident instead of triaging duplicate alerts
 
-#### Operational Underload
+# Operational Underload
 
 * "Wheel of Misfortune" exercises (discussed in Accelerating SREs to On-Call and Beyond) are also useful team activities that can help to hone and improve troubleshooting skills and knowledge of the service.
 * Google also has a company-wide annual disaster recovery event called DiRT (Disaster Recovery Training) that combines theoretical and practical drills to perform multiday testing of infrastructure systems and individual services.
 
-#### Effective Troubleshooting
+# Effective Troubleshooting
 
 * Be warned that being an expert is more than understanding how a system is supposed to work. Expertise is gained by investigating why a system doesn’t work.
 * Ways in which things go right are special cases of the ways in which things go wrong.
@@ -221,13 +221,13 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * Novice pilots are taught that their first responsibility in an emergency is to fly the airplane; troubleshooting is secondary to getting the plane and everyone on it safely onto the ground.
 * It’s really useful to have multiple verbosity levels available, along with a way to increase these levels on the fly. This functionality enables you to examine any or all operations in incredible detail without having to restart your process, while still allowing you to dial back the verbosity levels when your service is operating normally.
 
-#### Managing Incidents
+# Managing Incidents
 
 * Incident Command: The incident commander holds the high-level state about the incident. They structure the incident response task force, assigning responsibilities according to need and priority. De facto, the commander holds all positions that they have not delegated. If appropriate, they can remove roadblocks that prevent Ops from working most effectively.
 * Operational Work: The Ops lead works with the incident commander to respond to the incident by applying operational tools to the task at hand. The operations team should be the only group modifying the system during an incident.
 * Communication: This person is the public face of the incident response task force. Their duties most definitely include issuing periodic updates to the incident response team and stakeholders (usually via email), and may extend to tasks such as keeping the incident document accurate and up to date.
 
-#### Testing for Reliability
+# Testing for Reliability
 
 * One key responsibility of Site Reliability Engineers is to quantify confidence in the systems they maintain.
 * Confidence can be measured both by past reliability and future reliability.
@@ -235,13 +235,13 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * It’s possible for a testing system to identify a bug with zero MTTR. Zero MTTR occurs when a system-level test is applied to a subsystem, and that test detects the exact same problem that monitoring would detect. Such a test enables the push to be blocked so the bug never reaches production (though it still needs to be repaired in the source code).
 * The more bugs you can find with zero MTTR, the higher the Mean Time Between Failures (MTBF) experienced by your users.
 
-#### Software Engineering in SRE
+# Software Engineering in SRE
 
 * As with any product, SRE-developed software must be designed with knowledge of its users and requirements. It needs to drive adoption through utility, performance, and demonstrated ability to both benefit Google’s production reliability goals and to better the lives of SREs.
 * The process of socializing a product and achieving buy-in across an organization is key to the project’s success.
 * Don’t underestimate the effort required to raise awareness and interest in your software product—a single presentation or email announcement isn’t enough.
 
-#### Handling Overload
+# Handling Overload
 
 * At the end of the day, it’s best to build clients and backends to handle resource restrictions gracefully: redirect when possible, serve degraded results when necessary, and handle resource errors transparently when all else fails.
 * Different queries can have vastly different resource requirements.
@@ -251,7 +251,7 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * Remember that the code path you never use is the code path that (often) doesn’t work.
 * As load increases, there is usually a window in which CPU usage and load on the service correspond linearly, and response times stay mostly constant. At some point, many services reach a point of nonlinearity as they approach overload.
 
-#### Client-Side Throttling
+# Client-Side Throttling
 
 * We implemented client-side throttling through a technique we call adaptive throttling. Specifically, each client task keeps the following information for the last two minutes of its history:
 * Requests: The number of requests attempted by the application layer(at the client, on top of the adaptive throttling system)
@@ -259,7 +259,7 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * Criticality is another notion that we’ve found very useful in the context of global quotas and throttling. A request made to a backend is associated with one of four possible criticality values, depending on how critical we consider that request.
 * If at first you don’t succeed, back off exponentially.
 
-#### Data Integrity
+# Data Integrity
 
 <img src="assets/images/data-integrity.png" alt="data-integrity" width="100%"/>
 
@@ -268,7 +268,7 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * A matrix of all possible combinations of disasters with plans to address each of these disasters permits you to sleep soundly for at least one night; keeping your recovery plans current and exercised permits you to sleep the other 364 nights of the year.
 * As you get better at recovering from any breakage in reasonable time N, find ways to whittle down that time through more rapid and finer-grained loss detection, with the goal of approaching N = 0. You can then switch from planning recovery to planning prevention, with the aim of achieving the holy grail of all the data, all the time. Achieve this goal, and you can sleep on the beach on that well-deserved vacation.
 
-#### Reliable Product Launches at Scale
+# Reliable Product Launches at Scale
 
 * Anticipating the many different ways this launch could go wrong and coordinating between the different engineering groups involved in the launch fell to a special team within Site Reliability Engineering: the Launch Coordination Engineers (LCE).
 * This consulting team, Launch Coordination Engineering (LCE), facilitates a smooth launch process in a few ways: • Auditing products and services for compliance with Google’s reliability standards and best practices, and providing specific actions to improve reliability • Acting as a liaison between the multiple teams involved in a launch • Driving the technical aspects of a launch by making sure that tasks maintain momentum • Acting as gatekeepers and signing off on launches determined to be "safe" • Educating developers on best practices and on how to integrate with Google’s services, equipping them with internal documentation
@@ -277,7 +277,7 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * Question: Do you need a new domain name?–Action item: Coordinate with marketing on your desired domain name, and request registration of the domain. Here is a link to the marketing form. • Question: Are you storing persistent data?–Action item: Make sure you implement backups. Here are instructions for implementing backups. • Question: Could a user potentially abuse your service?–Action item: Implement rate limiting and quotas. Use the following shared service.
 * Is this launch tied to a press release, advertisement, blog post, or other form of promotion? • How much traffic and rate of growth do you expect during and after the launch? • Have you obtained all the compute resources needed to support your traffic?
 
-#### Dealing with Interrupts
+# Dealing with Interrupts
 
 * Pages concern production alerts and their fallout, and are triggered in response to production emergencies. They can sometimes be monotonous and recurring, requiring little thought. They can also be engaging and involve tactical in-depth thought. Pages always have an expected response time (SLO), which is sometimes measured in minutes.
 * Tickets concern customer requests that require you to take an action.
@@ -286,13 +286,13 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * The primary on-call engineer should focus solely on on-call work. If the pager is quiet for your service, tickets or other interrupt-based work that can be abandoned fairly quickly should be part of on-call duties. When an engineer is on-call for a week, that week should be written off as far as project work is concerned. If a project is too important to let slip by a week, that person shouldn’t be on-call. Escalate in order to assign someone else to the on-call shift. A person should never be expected to be on-call and also make progress on projects (or anything else with a high context switching cost).
 * A caveat to the preceding solutions is that you need to find a balance between respect for the customer and for yourself. Your guiding principle in constructing a strategy for dealing with customer requests is that the request should be meaningful, be rational, and provide all the information and legwork you need in order to fulfill the request. In return, your response should be helpful and timely.
 
-#### Embedding an SRE to recover from Operational Overload
+# Embedding an SRE to recover from Operational Overload
 
 * Your job while embedded with the team is to articulate why processes and habits contribute to, or detract from, the service’s scalability.
 * Your first goal for the team should be writing a service level objective (SLO), if one doesn’t already exist. The SLO is important because it provides a quantitative measure of the impact of outages, in addition to how important a process change could be. An SLO is probably the single most important lever for moving a team from reactive ops work to a healthy, long-term SRE focus. If this agreement is missing, no other advice in this chapter will be helpful. If you find yourself on a team without SLOs, first read Service Level Objectives, then get the tech leads and management in a room and start arbitrating.
 * "I’m not pushing back on the latest release because the tests are bad. I’m pushing back because the error budget we set for releases is exhausted." • "Releases need to be rollback-safe because our SLO is tight. Meeting that SLO requires that the mean time to recovery is small, so in-depth diagnosis before a rollback is not realistic."
 
-#### Production Meetings
+# Production Meetings
 
 * Production meetings are a special kind of meeting where an SRE team carefully articulates to itself—and to its invitees—the state of the service(s) in their charge, so as to increase general awareness among everyone who cares, and to improve the operation of the service(s). In general, these meetings are service-oriented; they are not directly about the status updates of individuals.
 * The goal is for everyone to leave the meeting with an idea of what’s going on—the same idea. The other major goal of production meetings is to improve our services by bringing the wisdom of production to bear on our services. That means we talk in detail about the operational performance of the service, and relate that operational performance to design, configuration, or implementation, and make recommendations for how to fix the problems. Connecting the performance of the service with design decisions in a regular meeting is an immensely powerful feedback loop.
@@ -305,37 +305,37 @@ recommend it to anyone in the DevOps/Platform/SRE space and I am eager to dive i
 * An issue that is not pageable and does not require attention.
 * Prior action items
 
-#### Collaboration within SRE
+# Collaboration within SRE
 
 * We try to have a crisp team charter to define what a team will—and more importantly, won’t—support, but we don’t always succeed.
 
-#### Production Readiness Review (PRR)
+# Production Readiness Review (PRR)
 
 * A PRR is considered a prerequisite for an SRE team to accept responsibility for managing the production aspects of a service.
 * Google’s Production Guide documents production best practices for services, as determined by the experiences of SRE and development teams alike. Developers can implement the solutions and recommendations in such documentation to improve their services.
 
-#### Frameworks
+# Frameworks
 
 * SRE builds framework modules to implement canonical solutions for the concerned production area. As a result, development teams can focus on the business logic, because the framework already takes care of correct infrastructure use.
 * A framework essentially is a prescriptive implementation for using a set of software components and a canonical way of combining these components. The framework can also expose features that control various components in a cohesive manner.
 * Business logic organized as well-defined semantic components that can be referenced using standard terms • Standard dimensions for monitoring instrumentation • A standard format for request debugging logs • A standard configuration format for managing load shedding • Capacity of a single server and determination of "overload" that can both use a semantically consistent measure for feedback to various control systems
 
-#### Conclusions
+# Conclusions
 
 * In essence, Google has adapted known reliability principles that were in many cases developed and honed in other industries to create its own unique reliability culture, one that addresses a complicated equation that balances scale, complexity, and velocity with high reliability.
 * SRE teams are constructed so that our engineers divide their time between two equally important types of work. SREs staff on-call shifts, which entail putting our hands around the systems, observing where and how these systems break, and understanding challenges such as how to best scale them. But we also have time to then reflect and decide what to build in order to make those systems easier to manage. In essence, we have the pleasure of playing both the roles of the pilot and the engineer/designer. Our experiences running massive computing infrastructure are codified in actual code and then packaged as a discrete product.
 * Using an aggregate unavailability metric (i.e., " X % of all operations failed") is more useful than focusing on outage lengths for services that may be partially available—for instance, due to having multiple replicas, only some of which are unavailable—and for services whose load varies over the course of a day or week rather than remaining constant.
 
-#### Define SLOs like a User
+# Define SLOs like a User
 
 * Measure availability and performance in terms that matter to an end user.
 * Example Measuring error rates and latency at the Gmail client, rather than at the server, resulted in a substantial reduction in our assessment of Gmail availability, and prompted changes to both Gmail client and server code.
 
-#### Error Budgets
+# Error Budgets
 
 * A budget is simply 1 minus a service’s SLO; for instance, a service with a 99.99% availability target has a 0.01% "budget" for unavailability. As long as the service hasn’t spent its error budget for the month through the background rate of errors plus any downtime, the development team is free (within reason) to launch new features, updates, and so on.
 * If the error budget is spent, the service freezes changes (except urgent security and bug fixes addressing any cause of the increased errors) until either the service has earned back room in the budget, or the month resets. For mature services with an SLO greater than 99.99%, a quarterly rather than monthly budget reset is appropriate, because the amount of allowable downtime is small.
 
-#### Overloads and Failures
+# Overloads and Failures
 
 * For times when load is high enough that even degraded responses are too expensive for all queries, practice graceful load shedding, using well-behaved queuing and dynamic timeouts; see Handling Overload. Other techniques include answering requests after a significant delay ("tarpitting") and choosing a consistent subset of clients to receive errors, preserving a good user experience for the remainder.

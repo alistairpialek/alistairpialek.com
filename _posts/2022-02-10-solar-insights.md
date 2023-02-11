@@ -11,7 +11,7 @@ As a lucky home owner in Sydney, I have been fortunate enough to be able to inst
 conditioning in my house. We have had solar panels going on 3 years now so I thought I would share some insights into
 how we use our solar power in 2022.
 
-##### The panels themselves
+# The panels themselves
 
 We have a 5.4kW system that comprises of 18 300W [Canadian Solar][2] panels and a 5.1kW [SolarEdge][3] inverter. Each panel has a
 [Power Optimiser][6] which means that they can be individually monitored and can tolerate shading without dropping the
@@ -36,7 +36,7 @@ the time arises.
 
 **Above: Datadog is a great tool to create dashboard's for your home automation needs. With this graph I can easily spot a panel performing abnormally.**
 
-##### Solar inverter
+# Solar inverter
 
 Working with the [SolarEdge SE5000H][4] single phase inverter has been an absolute pleasure and I would buy one again
 without hesitation. Being a data nerd, one of the things the inverter needed to have was an API. I wanted to be able to
@@ -54,7 +54,7 @@ In my scripts I had to factor this in. Not a big deal, and I understand why the 
 As for inverter performance, it's been flawless and I've spent next to no-time having to troubleshoot it or connect it
 back up to WiFi etc. It just chugs along day-in day-out.
 
-##### How we use our solar power
+# How we use our solar power
 
 One of the trends we have noticed over the years is the reduction in solar feed-in tariffs. Very early on, as solar
 started to kick off in Australia, feed-in tariffs were sky high and it made a lot of sense to feed-back into the grid
