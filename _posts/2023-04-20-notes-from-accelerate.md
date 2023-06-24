@@ -5,7 +5,7 @@ date: 2023-04-20 09:00:00 +1000
 tags: book, organizations
 ---
 
-Perhaps by good fortune, I have had the pleasure working for some amazing companies over the years that have
+Perhaps by good fortune, I have had the pleasure of working for some amazing companies over the years that have
 incorporated many of the indicators that high performing organizations possess and that I now know in formal
 detail, having read Accelerate by Nicole Forsgren PhD, Jez Humble and Gene Kim.
 
